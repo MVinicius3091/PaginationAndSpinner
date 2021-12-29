@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagination and spinner</title>
+  </head>
+  <style>
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .spinner{
+      display: inline-block;
+      animation: mod linear infinite 500ms;
+      padding: 0;
+      margin: 0;
+    }
+
+    .button{
+      padding: 0;
+      margin: 0;
+      display:none ;
+      position: absolute;
+      left: 0;
+    }
+    
+    button{
+      cursor: pointer;
+    }
+
+    .btn-div{
+      position: relative;
+    }
+
+    @keyframes mod{
+      10%{transform: rotate(36deg);}
+      20%{transform: rotate(72deg);}
+      30%{transform: rotate(108deg);}
+      40%{transform: rotate(144deg);}
+      50%{transform: rotate(180deg);}
+      60%{transform: rotate(216deg);}
+      70%{transform: rotate(252deg);}
+      80%{transform: rotate(288deg);}
+      90%{transform: rotate(324deg);}
+      100%{transform: rotate(360deg);}
+    }
+  </style>
+  <body>
+    <div>
+      <nav>
+        <h3>Pagination</h3>
+        <a href="#">acessórios </a>&rarr; 
+        <a href="#">eletrônicos </a>&rarr;
+        <a href="#">computador </a>&rarr; 
+        <a href="#">hard disk </a>&rarr;
+        <h3>Spinner</h3>
+
+        <div class="btn-div">
+          <button class="enviar">Enviar</button>
+          <button class="button"><p class="spinner">&#8635;</p> carregando</button>
+        </div>
+      </nav>
+    </div>
+
+    <script>
+      let btn = document.querySelector('.button');
+      let btnEnviar = document.querySelector('.enviar');
+
+      btnEnviar.addEventListener('click', ()=>{
+        btnEnviar.style.display = 'none';
+        btn.style.display = 'block'
+      });
+      console.log(button);
+    </script>
+  </body>
+</html>
